@@ -1,0 +1,17 @@
+void loop(){
+	if(latch){
+		wait(12us);
+		dataout(buttons[0]);
+		while(!pulse);
+		for(i = 1; i < 8; i++){
+			dataout(buttons[i]);
+		}
+	dataout(0);
+	}
+}	
+	
+void dataout(int x){
+	datapin = x;
+	while(pulse);
+	while(!pulse);
+}
